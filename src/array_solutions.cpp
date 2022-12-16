@@ -1,15 +1,6 @@
 #include "array_solutions.h"
 
-#include <iostream>
 #include <assert.h>
-
-void show_array(const int arr[], const int length) {
-  std::cout << "arr[" << length << "] = ";
-  for (int i{0}; i < length; ++i) {
-    std::cout << arr[i] << " ";
-  }
-  std::cout << std::endl;
-}
 
 int bisection_locate(const int arr[], const int length, const int target) {
   assert(length >= 0);
