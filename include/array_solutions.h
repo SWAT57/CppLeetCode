@@ -20,4 +20,10 @@ int bisection_locate(const int arr[], const int length, const int target);
 // O(1) move target(s) to end of array, while keeping order of non-target
 void rm_target_in_array(int arr[], const int length, const int target);
 
+// put square of ordered array in order
+void sort_square_ordered_arr(const int arr[], const int length, int result[]);
+
+// length of min sub-array which's sum is greater than target
+int length_min_sub_array(const int arr[], const int length, const int target);
+
 #endif
