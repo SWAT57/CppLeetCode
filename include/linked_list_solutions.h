@@ -13,4 +13,8 @@ void print_linked_list(const LinkNode* head);
 
 void delete_linked_list(LinkNode* head);
 
+LinkNode* delete_head_node(LinkNode* head);
+
+void delete_next_node(LinkNode* prev);
+
 #endif

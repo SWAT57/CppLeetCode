@@ -35,3 +35,25 @@ void delete_linked_list(LinkNode* head) {
   }
 }
 
+LinkNode* delete_head_node(LinkNode* head) {
+  if (head != nullptr) {
+    LinkNode* tmp = head->next;
+    delete head;
+    return tmp;
+  } else {
+    return nullptr;
+  }
+}
+
+void delete_next_node(LinkNode* prev) {
+  if (prev != nullptr) {
+    LinkNode* next = prev->next;
+    if (next == nullptr) {
+      std::cout << "next is void" << std::endl;
+    } else {
+      prev->next = next->next;
+      delete next;
+    }
+  }
+}
+
