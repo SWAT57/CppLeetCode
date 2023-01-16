@@ -57,3 +57,24 @@ void delete_next_node(LinkNode* prev) {
   }
 }
 
+LinkNode* delete_target_nodes(LinkNode* head, const int target) {
+  LinkNode* prev = head;
+  LinkNode* next = head;
+  while (next != nullptr) {
+    if (next->value == target) {
+      if (prev == next) {
+        head = delete_head_node(prev);
+        prev = head;
+        next = head;
+      } else {
+        delete_next_node(prev);
+        next = prev->next;
+      }
+    } else {
+      prev = next;
+      next = prev->next;
+    }
+  }
+  return head;
+}
+

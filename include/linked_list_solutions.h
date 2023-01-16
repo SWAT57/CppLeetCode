@@ -17,4 +17,6 @@ LinkNode* delete_head_node(LinkNode* head);
 
 void delete_next_node(LinkNode* prev);
 
+LinkNode* delete_target_nodes(LinkNode* head, const int target);
+
 #endif
