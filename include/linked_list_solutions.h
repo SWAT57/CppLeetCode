@@ -24,6 +24,11 @@ class LinkedList {
   LinkedList();
   ~LinkedList();
 
+  int Get(int index);
+  void AddAtHead(int value);
+  void AddAtTail(int value);
+  void AddAtIndex(int index, int value);
+  void DeleteAtIndex(int index);
   void Print();
  private:
   int length_;

@@ -88,6 +88,78 @@ LinkedList::~LinkedList() {
   length_ = 0;
 }
 
+int LinkedList::Get(int index) {
+  if (index >= length_) {
+    return -1;
+  }
+  int pos{0};
+  LinkNode* pos_ptr{head_};
+  while (pos < index) {
+    pos_ptr = pos_ptr->next;
+    pos++;
+  }
+  return pos_ptr->value;
+}
+
+void LinkedList::AddAtHead(int value) {
+  LinkNode* new_head = new LinkNode(value);
+  new_head->next = head_;
+  head_ = new_head;
+  length_++;
+}
+
+void LinkedList::AddAtTail(int value) {
+  if (head_ == nullptr) {
+    head_ = new LinkNode(value);
+    length_++;
+  } else {
+    LinkNode* pos = head_;
+    while (pos->next != nullptr) {
+      pos = pos->next;
+    }
+    pos->next = new LinkNode(value);
+    length_++;
+  }
+}
+
+void LinkedList::AddAtIndex(int index, int value) {
+  if (index > length_) {
+    std::cout << "index > list length, node not added" << std::endl;
+    return;
+  } else if (index < 0) {
+    AddAtHead(value);
+  }
+  int pos{0};
+  LinkNode* pos_ptr{head_};
+  while (pos < index-1) {
+    pos_ptr = pos_ptr->next;
+    pos++;
+  }
+  LinkNode* next = pos_ptr->next;
+  pos_ptr->next = new LinkNode(value);
+  pos_ptr->next->next = next;
+}
+
+void LinkedList::DeleteAtIndex(int index) {
+  if (index < 0 || index >= length_) {
+    std::cout << "invalid index " << index << " as list length is " << length_ << std::endl;
+    return;
+  } else if (index == 0) {
+    LinkNode* tmp = head_;
+    head_ = head_->next;
+    delete tmp;
+  }
+  int pos{0};
+  LinkNode* pos_ptr{head_};
+  while (pos < index-1) {
+    pos_ptr = pos_ptr->next;
+    pos++;
+  }
+  LinkNode* tmp = pos_ptr->next;
+  pos_ptr->next = tmp->next;
+  delete tmp;
+}
+
 void LinkedList::Print() {
   print_linked_list(head_);
 }
