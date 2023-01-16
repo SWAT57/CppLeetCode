@@ -78,3 +78,16 @@ LinkNode* delete_target_nodes(LinkNode* head, const int target) {
   return head;
 }
 
+LinkedList::LinkedList() {
+  length_ = 0;
+  head_ = nullptr;
+}
+
+LinkedList::~LinkedList() {
+  delete_linked_list(head_);
+  length_ = 0;
+}
+
+void LinkedList::Print() {
+  print_linked_list(head_);
+}

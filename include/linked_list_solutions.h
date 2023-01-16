@@ -19,4 +19,15 @@ void delete_next_node(LinkNode* prev);
 
 LinkNode* delete_target_nodes(LinkNode* head, const int target);
 
+class LinkedList {
+ public:
+  LinkedList();
+  ~LinkedList();
+
+  void Print();
+ private:
+  int length_;
+  LinkNode* head_;
+};
+
 #endif
