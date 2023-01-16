@@ -6,7 +6,7 @@
 // display array
 // template function must be implemented in .h
 template <class T>
-void show_array(const T* arr, const int length) {
+void print_array(const T* arr, const int length) {
   std::cout << "arr[" << length << "] = ";
   for (int i{0}; i < length; ++i) {
     std::cout << arr[i] << " ";
